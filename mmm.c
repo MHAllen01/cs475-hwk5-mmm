@@ -69,14 +69,23 @@ void mmm_freeup() {
 	// TODO
 	for (int i=0; i < size; i++) {
 		free(inputMatrix1[i]);
-		inputMatrix1[i] = NULL;
 		free(inputMatrix2[i]);
-		inputMatrix2[i] = NULL;
 		free(outputMatrixSeq[i]);
-		outputMatrixSeq[i] = NULL;
 		free(outputMatrixPar[i]);
+		inputMatrix1[i] = NULL;
+		inputMatrix2[i] = NULL;
+		outputMatrixSeq[i] = NULL;
 		outputMatrixPar[i] = NULL;
 	}
+
+	free(inputMatrix1);
+	free(inputMatrix2);
+	free(outputMatrixPar);
+	free(outputMatrixSeq);
+	inputMatrix1 = NULL;
+	inputMatrix2 = NULL;
+	outputMatrixPar = NULL;
+	outputMatrixSeq = NULL;
 }
 
 /**
